@@ -71,15 +71,39 @@ input{
     border-radius: 27px;
     font-size: 15px;
     font-weight: 300;
+    outline: none;
+    cursor: pointer;
 }
-input[type=email]{
+input.email{
+    position: relative;
     color: var(--secondary-blue);
     border: 1px currentColor solid;
     width: 394px;
     margin-right: auto;
     text-align: left;
     padding-left: 30px;
+    transition: border-color 0.3s linear;
+    color: var(--dark-blue);
 }
+form.error input.email{
+    border-color: var(--secondary-red);
+}
+
+form::after{
+    content: "Please provide valid email address";
+    position: absolute;
+    color: var(--secondary-red);
+    top: 100%;
+    margin: 5px 32px;
+    font-style: italic;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s linear;
+}
+form.error::after{
+    opacity: 1;
+}
+
 input::placeholder{
     color: var(--neutral-gray);
     opacity: 0.5;
@@ -91,8 +115,12 @@ input[type=submit]{
     font-weight: 700;
     color: #fff;
     box-shadow: 0px 10px 10px 0px rgba(79,125,243,0.29);
+    cursor: pointer;
+    transition: background-color 0.3s linear;
 }
-
+input[type=submit]:hover{
+    background-color: var(--secondary-blue);
+}
 .diagram-container img{
     width: 100%;
 }
@@ -113,6 +141,11 @@ input[type=submit]{
     width: 30px;
     color: var(--primary);
     cursor: pointer;
+    transition: color 0.3s linear, background-color 0.3s linear;
+}
+.social-container li:hover{
+    color: #fff;
+    background-color: var(--primary);
 }
 .social-container li *{
     cursor: pointer;
@@ -143,3 +176,4 @@ footer{
     color: var(--secondary-blue);
     font-size: 10px;
 }
+
