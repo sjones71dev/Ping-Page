@@ -76,8 +76,7 @@ input{
 }
 input.email{
     position: relative;
-    color: var(--secondary-blue);
-    border: 1px currentColor solid;
+    border: 1px var(--secondary-blue) solid;
     width: 394px;
     margin-right: auto;
     text-align: left;
@@ -177,3 +176,58 @@ footer{
     font-size: 10px;
 }
 
+@media only screen and (max-width: 700px) {
+
+    .container{
+        width: 80%;
+    }
+
+    header img{
+        height: 85%;
+    }
+    h1{
+        font-size: 28px;
+    }
+
+    h2{
+        font-size: 14px;
+    }
+    .notify-form{
+        height: 100px;
+        flex-direction: column;
+    }
+    .notify-form.error{
+        height: 150px;
+        margin-bottom: 28px;
+    }
+    input{
+        margin: 0 5%;
+    }
+    input.email{
+        width: 90%;
+        
+    }
+    form::after{
+        width: 100%;
+        margin: 0;
+        top: 54px;
+    }
+    input[type=submit]{
+        width: 90%;
+        margin-top: 10px;
+        font-size: 14px;
+    }
+    .error input[type=submit]{
+        margin-top: 60px;
+    }
+    .social-container{
+        width: 140px;
+        height: 40px;
+        margin-top: 120px;
+    }
+    .social-container li{
+        width: 40px;
+    }
+
+
+}
